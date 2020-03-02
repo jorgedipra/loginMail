@@ -1,0 +1,121 @@
+#popUp{
+    background-color: rgba(0, 0, 0, 0.87);
+    display: grid;
+    grid-template-rows: auto 90% auto;
+    height 100%;
+    left 0;
+    margin: 0;
+    padding 0;
+    position: fixed;
+    top:0;
+    width 100%;
+    #popUpCrd{
+        background: $paper;
+        grid-row: 2;
+        height 100%;
+        #popUpCard{
+            display: grid;
+            grid-template-rows: auto 80% auto;
+            grid-template-columns: auto 40% 50% auto;
+            height:100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            position absolute;
+            top: 0;
+            width:100%;
+            #cj1{
+                grid-row: 2;
+                grid-column: 2;
+                .container{
+                    #title{
+                        font-family: 'Orbitron', sans-serif;
+                    }
+                    .borde {
+                        display: inline-block;
+                        margin-bottom: 3.2rem;
+                        span {
+                            display: block;
+                            width: 88px;
+                            height: 4px;
+                            border-radius: 5px;
+                            background: $ColorPrimario
+                        }
+                        span:last-child {
+                            margin-left: 54px;
+                        }
+                        span:first-child {
+                             margin-bottom: 1.4rem;
+                         }
+                    }
+                    #tec{
+                        font-family: 'Orbitron', sans-serif;
+                        margin-top: -35px; 
+                    }
+                    #tecn{
+                        img{
+                            background-color: $ColorPrimario
+                            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                            height 24px
+                            width 24px
+                        }
+                    }
+                    #contenido{
+                        p{     
+                            text-align: justify;
+                            @media ({$mddesc}) {
+                               overflow: scroll;
+                                height: 30%; 
+                                overflow-x: hidden; 
+                            }
+                            @media ({$smdesc}) {
+                                    overflow: scroll;
+                                    height: 30%; 
+                                    overflow-x: hidden;   
+                            }
+                        }
+                    }
+                }
+            }
+            #cj2{
+                grid-row: 2;
+                grid-column: 3;
+                #logo{
+                    background-color:#fff 
+                    height :80px;
+                    position absolute
+                    width : 80px;
+                    border: solid 2px $ColorPrimario;
+                    border-radius: 100%
+                    margin: 20px;
+                    padding: 2px;
+
+                }
+                #img{
+                    width 100%;
+                    max-height 100%;
+                    
+                }
+                @media ({$smdesc}) {
+                        display: none
+                }
+            }
+             @media ({$smdesc}) {
+                 grid-template-columns: auto 100% auto;
+            }
+        }//::END->popUpCard
+    }//::END->popUpCrd
+}//::END->#popUp
+#cerrar{
+    color: #af3535; 
+    cursor:pointer
+    font-size: 50px;
+    margin-right: 0;
+    margin-top: 0;
+    margin: 5px 8px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}//::END->cerrar

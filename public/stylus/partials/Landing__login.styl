@@ -1,0 +1,108 @@
+#Login{
+	display: none;
+	&__body{
+		display:grid;
+		height: 68.5vh;
+		grid-template-columns: 65% auto;
+		.leftcontent{
+			background-color $TextoPrimario;
+			background-image url('https://instagram.fbog10-1.fna.fbcdn.net/v/t51.2885-15/e35/73398045_2641252129261883_2641814113146133203_n.jpg?_nc_ht=instagram.fbog10-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=I0eKF5jlWVwAX9a1Qnn&oh=03f68f4afa1920b74da3e5e421ee4c6b&oe=5E965A39');
+			background-size 100%  100%
+			color:$TextoPrimario;
+			grid-column 1;;
+			height: 100%;
+			padding-top: 60px;
+			right: 0;
+			z-index: 100;
+			.ltitle{
+				color: $paper
+				float: right
+				font-size: 36px
+				font-weight: 500
+				margin-right: 10%
+				margin-top: 0px	
+			}
+			.lcontent{
+				color: $paper
+				float: right
+				font-size: 18px
+				font-weight: 600
+				margin-right: -22px
+				margin-top: 42px
+				text-decoration: underline
+			}
+			@media ({$mddesc}) {
+				display none
+			}
+		}//::END->leftcontent
+		.sidebar{
+			grid-column 2
+			display grid
+			grid-template-rows 30% auto
+			box-shadow: $box-shadow;
+			.rtitle{
+				color: #333
+				font-size: 36px
+				font-weight: 200
+				padding-left: 30px	
+				padding-top:20px		
+			}//::END->rtitle
+			form{
+				grid-row 2
+				.textinput{
+					margin-left: 35px;
+					height: 40px;
+					border-width: 0;
+					border-style: solid;
+					border-color: $ColorPrimario;
+					border-left-width: 5px;
+					background-color: #eee;
+					width: 270px;
+					padding-left: 10px;
+					outline: 0;
+					&:focus{
+						background-color: #f4f4f4
+					}
+					@media ({$mddesc}) {
+						width: 85%
+					}
+				}//::END->form
+				.submit{
+					background-color: $Complementario;
+					border-radius 2px;
+					border none
+					box-shadow: $box-shadow
+					bottom: 30px;
+					color: #fff;
+					cursor: pointer	;
+					height: 50px;
+					outline: 0;
+					position: static;
+					margin-left: 30px
+					margin-top: 30px
+					float left 	
+					width: 78%
+					@media ({$mddesc}) {
+						width: 80%
+						margin-right: 10%
+					}
+					@media ({$sm}) {
+						width: 84%;
+						margin-right: 7%;
+					}
+					@media ({$xs}) {
+						width: 84%
+						margin-right: 3%;
+					}
+				}
+			}//::END->form
+			@media ({$mddesc}) {
+				background: $paper
+				z-index: 100
+			}
+		}//::END->sidebar
+		@media ({$mddesc}) {
+			grid-template-columns: auto 99% auto
+		}
+	}//::END->Login__body
+}//::END->Login	

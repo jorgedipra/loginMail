@@ -14,6 +14,7 @@ $Classes=[
 
 #			  @metodo		@ruta  							@target        	  @name		
 $router->map('GET|POST',	$DIR->url("/"),   				$Classes['1'],    'home');
+$router->map('GET|POST',	$DIR->url("/page"),   			$Classes['1'],    'page');
 $router->map('GET',			$DIR->url("/404"), 			  	$Classes['1'],    '_404');
 
 // match current requestc

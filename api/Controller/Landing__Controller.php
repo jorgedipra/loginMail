@@ -16,6 +16,18 @@ class Landing__Controller extends Controller
         ];
     } ##->END function home
 
+    public function page($id = '', $var = '')
+    {
+
+        $qb = new PtcQueryBuilder($this->pdo());
+
+        $datos = 'jorgedipra';
+
+        return $view = [
+            'datos' => $datos,
+        ];
+    } ##->END function home
+
     public function _404($id = '', $var = '')
     {
         if ($id == true):

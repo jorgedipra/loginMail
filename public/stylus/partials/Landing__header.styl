@@ -1,44 +1,47 @@
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: linear-gradient(45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px), linear-gradient(-45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px);
-  color: #949494;
-}
-
-* {
-  box-sizing: border-box; 
-}
-li{
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-.bordertable{
-  padding-left: 30px
-  th{
-    color: #ccc
-    border: dashed 1px consola
-    padding-left: 10px
-    padding-right: 10px
-    text-align: center
-  }
-  td{
-     border: dashed 1px consola
-     padding-left: 10px
-  }
-}
-//1
 #header{
-  background      : color_primario;
-  border-bottom   : solid 0.5px rgba(255, 255, 255, 0.8)
-  grid-row-start  : 1;
-  grid-row-end    : 2;
-  font-family: 'Orbitron', sans-serif;
-  text-align: right;
+	.navbar{
+		background-color: $ColorPrimario;
+		border-radius: 0 0 5px 5px;
+		box-shadow: $box-shadow;
+		.navbar-brand{
+			color:$TextosDefaul;
+			font-size: 1.65rem
+			line-height: 28px
+			img{
+				border-radius: 100%;
+			}
+		}//::END->navbar-brand
+		.navbar-collapse{
+			ul{
+				margin: 0 auto;
+				li{
+					a{
+						border-bottom 2px solid $ColorPrimario
+						color:$TextosDefaul
+						&:hover{
+						border-bottom 2px solid $paper	
+						}
+						.fab{
+							font-size: 18px
+							color: $paper
+							padding-right: 10px
+						}
+					}//END->a
+				}//::END->li
+			}//::END->ul
+			button{
+				.fab{
+					font-size: 18px
+					padding-right: 10px
+					}
+			}
+		}//::END->.navbar-collapse
+	}//::END->.navbar
+}//::END->#header
+#space{
+	height: 1px
+	width: 35%
+}
+li.nav-item {
+    width: max-content;
 }

@@ -1,31 +1,268 @@
-#app{
-  display               : grid;
-  grid-template-columns : auto;
-  grid-template-rows    : 50px auto;
-  height                : 100%;
-  width                 : 100%;
-  @media({$Hms}){
-    grid-template-rows    : 30px auto;
-  }
-  @media({$Hmss}){
-    height 400px;
-  }
-}
-//2
-#body{
-    background            :linear-gradient(45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px), linear-gradient(-45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px);
-    display               : grid;
-    grid-template-columns : 80% auto
-    grid-template-rows    : auto
-    grid-row-start        : 2;
-    grid-row-end          : 3;
-    grid-column-start     : 1
-    grid-column-end       : 2
-    @media ({$lgdesc}) {
-      grid-template-columns : auto 260px
-    }
-    @media ({$xs}) {
-      grid-template-columns : auto
-      grid-template-rows    : 70px auto
-    }
+#gridLan{
+	position: relative;
+	// height: 700px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-rows: 100%;
+	grid-gap: 5px;
+	&__card{
+		display: grid;
+		grid-template-rows: 50px 500px 700px 50px;
+		grid-gap: 10px;
+		#twiter{
+			grid-row:3
+			box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+			iframe#twitter-widget-0 { 
+				height: 700px !important;
+			}
+			@media ({$mddesc}) {
+			display: none;
+			}	
+		}
+		.card-body{
+			h1{
+				@media ({$mddesc}) {
+					font-size: 200%;
+				}
+				@media ({$xs}) {
+					font-size: 150%
+				}
+			}//::END->h1
+			h4{
+				@media ({$xs}) {
+					font-size: 120%
+				}
+				@media ({$sm}) {
+					font-size: 100%
+				}
+			}//::END->h4
+			.btn-group{
+				.btn{
+					i{
+						@media ({$lgdesc}) {
+							font-size: 150%;
+							padding-left:10px;
+							padding-right:10px;
+						}
+						@media ({$mddesc}) {
+								padding: 0
+						}
+						@media ({$mddesc}) {
+							padding-left:10px;
+							padding-right:10px;
+						}
+					}//::END->i
+					span{
+						@media ({$lgdesc}) {
+							display: none
+						}	
+					}//::END->span
+					@media ({$mddesc}) {
+						width 40%;
+						padding-right:5%
+						padding-left:5%
+					}
+				}//END->btn
+				@media ({$mddesc}) {
+				 	position: absolute;
+				    bottom: 5%;
+				    left: 2%;
+				    width: 46%;
+				}
+
+			}//END->btn-group 
+		}//END->card-body
+		@media ({$mddesc}) {
+			grid-template-rows: 15% 57% 28%;
+		}
+		@media ({$mddesc}) {
+			grid-template-rows: auto 70% auto;	
+		}
+		@media ({$mddesc}) {
+			grid-column 2
+			grid-template-rows: auto 90% auto;	
+			grid-template-columns: auto 90% auto;	
+		}
+		@media ({$smdesc}) {
+			grid-template-columns: auto 97% auto
+		}
+		@media ({$xs}) {
+	 		grid-template-columns: auto 100% auto
+		}	
+	}//::END-> __card
+	
+	&__carrusel{
+		display: grid;
+		grid-template-rows: 50px 350px 150px 100px auto;
+		#carouselExampleIndicators{
+			grid-row:2
+			@media ({$lgdesc}) {
+				width:95%;
+			}
+			@media ({$mddesc}) {
+				grid-row 1
+			}
+			@media ({$xs}) {
+				width:100%;
+				grid-row: 2
+			}
+		}
+		#cita{
+			display:  grid;
+			grid-template-columns: 16% auto
+			text-align: left;
+			width 93%;
+			margin-top:2%
+			grid-row:3
+			img{
+				border-radius: 200px 200px
+				width 80px
+			}
+			p{
+				padding-top:5%;
+			}
+			@media ({$mddesc}) {
+				display: none;
+			}
+		}
+		@media ({$lgdesc}) {
+			grid-template-rows: 50px 350px 150px 100px auto;
+		}
+		@media ({$mddesc}) {
+			grid-row: 2;
+			grid-column: 2;
+			grid-template-rows:60% 40% auto;
+		}		
+		@media ({$xs}) {
+			grid-template-rows:40% 60%;
+		}
+	}//::END-> __card
+	
+	&__botonera{
+		grid-row: 4;
+		text-align: center;
+		display: grid;
+		grid-template-columns: 15% 70% 15%;
+		grid-template-rows: 15% 50% 35%;
+		.btnLan{
+			grid-row: 2;
+			grid-column: 2;
+			.btn{
+				margin: 10px;
+				@media ({$mddesc}) {
+					width: 49%;
+					margin: 0;
+				}
+				@media ({$xs}) {
+					width: 90%
+					margin-top: 3%
+				}
+			}//::END->.btn
+			@media ({$mddesc}) {
+				grid-row: 2;
+				z-index: 1;
+			}
+		}//::END->.btnLan
+		@media ({$lgdesc}) {
+			grid-template-rows: 5% 55% 40%;
+		}
+		@media ({$mddesc}) {
+			grid-template-columns: 10% auto 10%;
+			grid-template-rows: 28% 80%;
+			grid-row: 2
+		}
+		@media ({$smdesc}) {
+			grid-template-columns: 8% auto 8%
+		}
+		@media ({$xs}) {
+			grid-template-columns: 0 auto 0
+			grid-template-rows: 1% auto;
+			grid-row: 1
+		}
+		
+	}//::END->__botonera
+	&__description{
+		box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+		border-left: solid #303f9f 2px;
+		color:#333;
+		grid-row: 5;
+		text-align: justify
+		font-size: 16px;
+    	font-weight: 500;
+		margin-bottom: 10px;
+		padding: 8px
+		padding-top: 15px;
+		padding-bottom: 35px;
+		width: 89%;
+		margin-left 5%
+		height: fit-content;
+		h4{
+			margin-left: 2%
+		}
+		p{
+			margin-left: 5%
+			margin-right: 5%
+		}
+		a{
+			font-weight: 700;
+			color: #303f9f;
+		}
+		ul{
+			margin-left: 5%
+		}
+	}
+	.card{
+		grid-row: 2;
+		box-shadow:$box-shadow;
+		@media ({$mddesc}) {
+			display: grid;
+			grid-template-columns: 50% auto
+			grid-row 2
+			grid-column 2
+			height: 100%;
+		} 
+		.card-img-top{
+			@media ({$mddesc}) {
+				margin: 5% auto;
+    			width: 90%;
+			}
+		}
+	}//::END-> card
+	
+	.carousel{
+		grid-row: 2;
+		margin:0 auto;
+		width: 90%;
+	}//::END->carousel 
+	@media ({$mddesc}) {
+		height: auto;
+		grid-template-columns: auto 95% auto;
+		grid-template-rows: 240px 360px 900px;
+	}
+	@media ({$smdesc}) {
+		grid-template-rows: 240px 350px 1090px;
+		 margin-left: auto; 
+		 margin-right:auto; 
+		 iframe{
+			 width 100%
+		 }
+	}
+	@media ({$xs}) {
+		grid-template-rows: 240px 350px 900px;
+		margin-left: 0%;
+		#fra,
+		iframe{
+			 display:  none;
+		 }
+	}
+	@media ({$mss}) {
+		grid-template-columns: auto 100% auto
+	}
+}//END->gridLan
+body{
+	@media ({$xs}) {
+		width:100%;
+		max-width: 374px;
+	}
 }
