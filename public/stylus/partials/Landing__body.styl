@@ -1,0 +1,31 @@
+#app{
+  display               : grid;
+  grid-template-columns : auto;
+  grid-template-rows    : 50px auto;
+  height                : 100%;
+  width                 : 100%;
+  @media({$Hms}){
+    grid-template-rows    : 30px auto;
+  }
+  @media({$Hmss}){
+    height 400px;
+  }
+}
+//2
+#body{
+    background            :linear-gradient(45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px), linear-gradient(-45deg, #212121 15px, rgba(255, 255, 255, 0.08) 15px, #212121 16px);
+    display               : grid;
+    grid-template-columns : 80% auto
+    grid-template-rows    : auto
+    grid-row-start        : 2;
+    grid-row-end          : 3;
+    grid-column-start     : 1
+    grid-column-end       : 2
+    @media ({$lgdesc}) {
+      grid-template-columns : auto 260px
+    }
+    @media ({$xs}) {
+      grid-template-columns : auto
+      grid-template-rows    : 70px auto
+    }
+}
