@@ -1,6 +1,6 @@
 <?php
 #@header
-define("Titulo", "Login");
+define("Titulo", "Log in");
 include 'partials/header_partials.php';
 #@END::header
 
@@ -20,7 +20,7 @@ include 'partials/Landing__header_partials.php';
 </div>
 
 <div class="sidebar">
-  <span class="rtitle">Login</span>
+  <span class="rtitle">Log in</span>
  
   <form action="page" method="POST">
     <input class="textinput" type="text" name="username" autofocus="autofocus" placeholder="Usuario">
@@ -29,8 +29,9 @@ include 'partials/Landing__header_partials.php';
     <input class="textinput" type="password" name="password" placeholder="Contraseña">
     <input type="hidden" name="_token" value="<?=NoCSRF::generate('_token')?>">
     <button class="submit" type="submit">
-      Entrar
+        Log in
     </button>
+    <span><a href="#SignUp">Sign Up</a></span>
   </form>
 
 </div>
