@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2020 a las 18:39:23
+-- Tiempo de generación: 02-03-2020 a las 21:05:17
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 5.6.39
 
@@ -72,6 +72,21 @@ INSERT INTO `lg_identificacion` (`Id`, `Nombre`, `Acronimo`, `Creada`, `Modifica
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `lg_login`
+--
+
+CREATE TABLE `lg_login` (
+  `Id` int(11) NOT NULL,
+  `Id_usuario` int(11) NOT NULL,
+  `User` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'Usuario',
+  `Pass` varchar(100) COLLATE utf8_bin NOT NULL COMMENT 'Contraseña',
+  `Creada` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Modificada` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `lg_usuarios`
 --
 
@@ -107,6 +122,14 @@ ALTER TABLE `lg_identificacion`
   ADD KEY `Id` (`Id`);
 
 --
+-- Indices de la tabla `lg_login`
+--
+ALTER TABLE `lg_login`
+  ADD PRIMARY KEY (`Id`),
+  ADD UNIQUE KEY `User_index` (`User`),
+  ADD KEY `Id_usuario` (`Id_usuario`);
+
+--
 -- Indices de la tabla `lg_usuarios`
 --
 ALTER TABLE `lg_usuarios`
@@ -131,6 +154,12 @@ ALTER TABLE `lg_identificacion`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `lg_login`
+--
+ALTER TABLE `lg_login`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `lg_usuarios`
 --
 ALTER TABLE `lg_usuarios`
@@ -139,6 +168,12 @@ ALTER TABLE `lg_usuarios`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `lg_login`
+--
+ALTER TABLE `lg_login`
+  ADD CONSTRAINT `lg_login_userFk` FOREIGN KEY (`Id_usuario`) REFERENCES `lg_usuarios` (`Id`);
 
 --
 -- Filtros para la tabla `lg_usuarios`
